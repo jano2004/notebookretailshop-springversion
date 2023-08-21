@@ -7,62 +7,22 @@
     <title>Gaming Notebooks</title>
 </head>
 <body>
-<div class="main">
-    <div class="main_container">
-        <form action="/gamingNBForm" method="get">
-            <h2>Choose:</h2>
-            <p>
-            <h3>Monitor size in Inches</h3>
-            <label>
-                <input class="windowsizeInInch" type="radio" name="windowsizeInInch" value="13Inch">
-            </label>13 Inch
-            <label>
-                <input class="windowsizeInInch" type="radio" name="windowsizeInInch" value="14Inch">
-            </label>14 Inch
-            <label>
-                <input class="windowsizeInInch" type="radio" name="windowsizeInInch" value="15Inch">
-            </label>15 Inch
-            <p>
-            <p>
-            <h3>CPU:</h3>
-            <label>
-                <input class="cpu" type="radio" name="cpu" value="IntelCorei5-1135G7">
-            </label>Intel Core i5-1135G7h
-            <label>
-                <input class="cpu" type="radio" name="cpu" value="IntelCorei7-1165G7">
-            </label>Intel Core i7-1165G7
-            <label>
-                <input class="cpu" type="radio" name="cpu" value="IntelCorei9-11900H">
-            </label>Intel Core i9-11900H
-            <p>
-            <p>
-            <h3>RAM:</h3>
-            <label>
-                <input class="ram" type="radio" name="ram" value="16GB">
-            </label>16 GB
-            <label>
-                <input class="ram" type="radio" name="ram" value="32GB">
-            </label>32 GB
-            <label>
-                <input class="ram" type="radio" name="ram" value="64GB">
-            </label>64 GB
-            <p>
-            <p>
-            <h3>Layout:</h3>
-            <label>
-                <input class="layout" type="radio" name="layout" value="de">
-            </label>German
-            <label>
-                <input class="layout" type="radio" name="layout" value="en">
-            </label>English
-            <label>
-                <input class="layout" type="radio" name="layout" value="fr">
-            </label>French
-            <p>
-            <button type="submit" class="submitNB" id="submitNB" name="action" value="submit"><b>Submit</b></button>
-            <div th:if="${message}" th:text="${message}">worked!</div>
-        </form>
-    </div>
-</div>
+    <h2>Choose:</h2>
+    <select name="monitorsizes" id="monitorsizes">
+        <option th:each="monitorsize : ${monitorsizes}" th:value="${monitorsize}" th:text="${monitorsize}"></option>
+    </select>
+    <select name="cpus" id="cpus">
+        <option th:each="cpu : ${cpus}" th:value="${cpus}" th:text="${cpus}"></option>
+    </select>
+    <select name="gpus" id="gpus">
+        <option th:each="gpu : ${gpus}" th:value="${gpus}" th:text="${gpus}"></option>
+    </select>
+    <select name="rams" id="rams">
+        <option th:each="ram : ${rams}" th:value="${rams}" th:text="${rams}"></option>
+    </select>
+    <select name="layouts" id="layouts">
+        <option th:each="layout : ${layouts}" th:value="${layouts}" th:text="${layouts}"></option>
+    </select>
+    <button type="submit" class="submitNB" id="submitNB" name="action" value="submit"><b>Submit</b></button>
 </body>
 </html>
