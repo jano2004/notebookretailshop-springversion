@@ -11,28 +11,33 @@ body{
     align-items: center;
 }
 
-body{ 
+body{
+    font-family: Arial, sans-serif;
+    font-size: 20px;
     background-image: url("images/body-background.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center; 
     background-attachment: fixed; 
-    background-color: rgba(255, 112, 93);
+    background-color: rgb(53, 173, 255);
 }
 
-.main_container{
-    font-family: Arial, sans-serif;
-    font-size: 20px;
-
-    width: 300px;
-
-    padding:25px;
-
-    border: 0;
-    border-radius: 10%;
-
-    box-shadow: 0 16px 32px rgba(49, 49, 49, 0.7);
-
-    background-color: rgb(17, 47, 51, 0.15);
+.officePC{
+    background-color: antiquewhite;
 }
+
+.officeNB{
+    background-color: antiquewhite;
+}
+
+.gamingPC{
+    background-color: antiquewhite;
+}
+
+.gamingNB{
+    background-color: antiquewhite;
+}
+
+
+
 
