@@ -1,4 +1,4 @@
-package serverapplication.demo;
+package serverapplication.demo.Controller;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Controller;

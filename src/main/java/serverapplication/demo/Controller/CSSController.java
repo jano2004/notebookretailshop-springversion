@@ -1,4 +1,4 @@
-package serverapplication.demo;
+package serverapplication.demo.Controller;
 
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
