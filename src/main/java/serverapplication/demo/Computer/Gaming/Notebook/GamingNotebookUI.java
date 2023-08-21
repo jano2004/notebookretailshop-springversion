@@ -1,0 +1,30 @@
+package serverapplication.demo.Computer.Gaming.Notebook;
+
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import serverapplication.demo.Computer.Office.Notebook.OfficeNotebook;
+
+@RequestMapping("/")
+public class GamingNotebookUI {
+    @GetMapping
+    public String showUI(Model model){
+        return "gamingNB";
+    }
+
+    @PostMapping("/gamingNB_form")
+    public String createGamingNotebook(@RequestParam String windowsizeInInch,
+                                     @RequestParam String cpu,
+                                     @RequestParam String ram,
+                                     @RequestParam String layout,
+                                     @RequestParam String action,
+                                     Model model){
+        if("submit".equals(action)){
+            OfficeNotebook onb = new OfficeNotebook(windowsizeInInch, cpu, ram, layout);
+            model.addAttribute("message", "message");
+        }
+        return "gamingNB";
+    }
+}

@@ -1,0 +1,26 @@
+package serverapplication.demo.Computer.Office.PC;
+
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+
+@SpringBootApplication
+@RequestMapping
+public class OfficePCUI {
+    @GetMapping
+    public String showUI(Model model){
+        return "officePC";
+    }
+
+    @PostMapping("/officePC_form")
+    public String createOfficePC(@RequestParam String cpu,
+                                 @RequestParam String ram,
+                                 @RequestParam String action,
+                                 Model model){
+        if("submit".equals(action)){
+            OfficePC opc = new OfficePC(cpu, ram);
+            model.addAttribute("message", "createOfficePC");
+        }
+        return "officePC";
+    }
+}
