@@ -13,7 +13,7 @@ public class OfficePCUI {
         return "officePC";
     }
 
-    @PostMapping("/officePC_form")
+    @PostMapping("/officePCForm")
     public String createOfficePC(@RequestParam String cpu,
                                  @RequestParam String ram,
                                  @RequestParam String action,

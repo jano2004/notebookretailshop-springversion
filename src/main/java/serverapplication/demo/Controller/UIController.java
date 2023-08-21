@@ -16,7 +16,7 @@ public class UIController {
         return "homepage";
     }
 
-    @GetMapping("/homepage_form")
+    @GetMapping("/homepageForm")
     public String clickOnNBorPC(@RequestParam String action, Model model){
         String valueOfReturn = "";
         if ("officePC".equals(action)){

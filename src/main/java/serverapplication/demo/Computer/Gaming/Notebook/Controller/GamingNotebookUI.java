@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import serverapplication.demo.Computer.Office.Notebook.OfficeNotebook;
+import serverapplication.demo.Computer.Gaming.Notebook.GamingNotebook;
 
 @RequestMapping("/")
 public class GamingNotebookUI {
@@ -14,7 +14,7 @@ public class GamingNotebookUI {
         return "gamingNB";
     }
 
-    @PostMapping("/gamingNB_form")
+    @PostMapping("/gamingNBForm")
     public String createGamingNotebook(@RequestParam String windowsizeInInch,
                                      @RequestParam String cpu,
                                      @RequestParam String ram,
@@ -22,7 +22,7 @@ public class GamingNotebookUI {
                                      @RequestParam String action,
                                      Model model){
         if("submit".equals(action)){
-            OfficeNotebook onb = new OfficeNotebook(windowsizeInInch, cpu, ram, layout);
+            GamingNotebook onb = new GamingNotebook(windowsizeInInch, cpu, ram, layout);
             model.addAttribute("message", "message");
         }
         return "gamingNB";

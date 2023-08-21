@@ -14,7 +14,7 @@ public class OfficeNotebookUI {
         return "officeNB";
     }
 
-    @PostMapping("/officeNB_form")
+    @PostMapping("/officeNBForm")
     public String createOfficeNotebook(@RequestParam String windowsizeInInch,
                                      @RequestParam String cpu,
                                      @RequestParam String ram,
