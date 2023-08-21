@@ -13,12 +13,12 @@ public class GamingPCUI {
         return "gamingPC";
     }
 
-    @PostMapping("/gamingPCForm")
-    public String createGamingPC(@RequestParam String cpu,
-                                 @RequestParam String gpu,
-                                 @RequestParam String ram,
-                                 @RequestParam String cooling){
+    @GetMapping("/gamingPC")
+    public void createGamingPC(@RequestParam String cpu,
+                               @RequestParam String gpu,
+                               @RequestParam String ram,
+                               @RequestParam String cooling,
+                               Model model ){
         GamingPC gpc = new GamingPC(cpu, gpu, ram, cooling);
-        return "shopping-card";
     }
 }

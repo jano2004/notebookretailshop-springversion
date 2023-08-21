@@ -9,7 +9,7 @@
 <body>
 <div class="main">
     <div class="main_container">
-        <form action="/gamingPCForm" method="post">
+        <form id="gamingPC_form" action="/gamingPC" method="get">
             <h2>Choose:</h2>
             <p>
             <h3>CPU:</h3>
@@ -57,7 +57,7 @@
             </label>Blockcooling
             <p>
                 <button type="submit" class="submitPC" id="submitPC" name="action" value="submit"><b>Submit</b></button>
-            <div th:if="${message}" th:text="${message}">worked!</div>
+            <p>
         </form>
     </div>
 </div>
