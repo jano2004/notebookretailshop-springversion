@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import serverapplication.demo.Computer.Office.Notebook.OfficeNotebook;
+import serverapplication.demo.Stock.Stock;
 
 @RequestMapping("/")
 public class OfficeNotebookUI {
@@ -15,16 +16,14 @@ public class OfficeNotebookUI {
     }
 
     @PostMapping("/officeNBForm")
-    public String createOfficeNotebook(@RequestParam String windowsizeInInch,
+    public void createOfficeNotebook(@RequestParam String windowsizeInInch,
                                      @RequestParam String cpu,
                                      @RequestParam String ram,
                                      @RequestParam String layout,
                                      @RequestParam String action,
                                      Model model){
-        if("submit".equals(action)){
-            OfficeNotebook onb = new OfficeNotebook(windowsizeInInch, cpu, ram, layout);
-            model.addAttribute("message", "createOfficeNotebook");
-        }
-        return "officeNB";
+        Stock stock = Stock.getInstance();
+        OfficeNotebook onb = new OfficeNotebook(windowsizeInInch, cpu, ram, layout);
+        stock.addOfficeNotebook(onb);
     }
 }

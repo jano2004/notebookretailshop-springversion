@@ -4,6 +4,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import serverapplication.demo.Computer.Office.PC.OfficePC;
+import serverapplication.demo.Stock.Stock;
 
 @SpringBootApplication
 @RequestMapping
@@ -14,14 +15,12 @@ public class OfficePCUI {
     }
 
     @PostMapping("/officePCForm")
-    public String createOfficePC(@RequestParam String cpu,
+    public void createOfficePC(@RequestParam String cpu,
                                  @RequestParam String ram,
                                  @RequestParam String action,
                                  Model model){
-        if("submit".equals(action)){
-            OfficePC opc = new OfficePC(cpu, ram);
-            model.addAttribute("message", "createOfficePC");
-        }
-        return "officePC";
+        Stock stock = Stock.getInstance();
+        OfficePC opc = new OfficePC(cpu, ram);
+        stock.addOfficePC(opc);
     }
 }
