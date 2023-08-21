@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Gaming PCs</title>
+    <link rel="stylesheet" th:href="@{/css/specifiedStyles/gamingPC.css}" />
 </head>
 <body>
 <div class="main">
     <div class="main_container">
-        <form action="/officeNB_form" method="post">
+        <form action="/officePC_form" method="post">
             <h2>Choose:</h2>
             <p>
             <h3>CPU:</h3>
@@ -54,7 +55,7 @@
                 <input type="radio" name="cooling" value="block">
             </label>Blockcooling
             <p>
-                <button type="submit" class="submitNB" id="submitNB" name="action" value="submit"><b>Submit</b></button>
+                <button type="submit" class="submitPC" id="submitPC" name="action" value="submit"><b>Submit</b></button>
             <div th:if="${message}" th:text="${message}">worked!</div>
         </form>
     </div>

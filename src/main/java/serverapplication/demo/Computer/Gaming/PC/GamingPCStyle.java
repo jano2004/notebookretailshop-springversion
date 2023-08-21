@@ -1,4 +1,4 @@
-package serverapplication.demo;
+package serverapplication.demo.Computer.Gaming.PC;
 
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
@@ -8,11 +8,10 @@ import java.io.IOException;
 import java.io.InputStream;
 
 @RestController
-public class CSSController {
-
-    @GetMapping(value = "/css/style.css", produces = "text/css")
+public class GamingPCStyle {
+    @GetMapping(value = "/css/specifiedStyles/gamingPC.css", produces = "text/css")
     public byte[] getStylesheet() throws IOException {
-        Resource resource = new ClassPathResource("static/css/style.css");
+        Resource resource = new ClassPathResource("static/css/specifiedStyles/gamingPC.css");
         try (InputStream inputStream = resource.getInputStream()) {
             return inputStream.readAllBytes();
         }

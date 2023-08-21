@@ -10,9 +10,9 @@ import java.io.InputStream;
 @RestController
 public class GamingNotebookStyle {
 
-    @GetMapping(value = "/css/gamingNB.css", produces = "text/css")
+    @GetMapping(value = "/css/specifiedStyles/gamingNB.css", produces = "text/css")
     public byte[] getStylesheet() throws IOException {
-        Resource resource = new ClassPathResource("static/css/gamingNB.css");
+        Resource resource = new ClassPathResource("static/css/specifiedStyles/gamingNB.css");
         try (InputStream inputStream = resource.getInputStream()) {
             return inputStream.readAllBytes();
         }
