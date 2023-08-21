@@ -4,6 +4,7 @@
     <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/specifiedStyles/officePC.css}" />
     <title>Gaming Notebooks</title>
 </head>
 <body>
@@ -35,7 +36,7 @@
                 <input type="radio" name="ram" value="64GB">
             </label>64 GB
             <p>
-            <button type="submit" class="submitNB" id="submitNB" name="action" value="submit"><b>Submit</b></button>
+            <button type="submit" class="submitPC" id="submitPC" name="action" value="submit"><b>Submit</b></button>
             <div th:if="${message}" th:text="${message}">worked</div>
         </form>
     </div>

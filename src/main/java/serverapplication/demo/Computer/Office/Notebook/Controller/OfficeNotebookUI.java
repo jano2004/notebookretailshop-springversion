@@ -1,4 +1,4 @@
-package serverapplication.demo.Computer.Gaming.Notebook;
+package serverapplication.demo.Computer.Office.Notebook.Controller;
 
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,14 +8,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import serverapplication.demo.Computer.Office.Notebook.OfficeNotebook;
 
 @RequestMapping("/")
-public class GamingNotebookUI {
+public class OfficeNotebookUI {
     @GetMapping
     public String showUI(Model model){
-        return "gamingNB";
+        return "officeNB";
     }
 
-    @PostMapping("/gamingNB_form")
-    public String createGamingNotebook(@RequestParam String windowsizeInInch,
+    @PostMapping("/officeNB_form")
+    public String createOfficeNotebook(@RequestParam String windowsizeInInch,
                                      @RequestParam String cpu,
                                      @RequestParam String ram,
                                      @RequestParam String layout,
@@ -23,8 +23,8 @@ public class GamingNotebookUI {
                                      Model model){
         if("submit".equals(action)){
             OfficeNotebook onb = new OfficeNotebook(windowsizeInInch, cpu, ram, layout);
-            model.addAttribute("message", "message");
+            model.addAttribute("message", "createOfficeNotebook");
         }
-        return "gamingNB";
+        return "officeNB";
     }
 }

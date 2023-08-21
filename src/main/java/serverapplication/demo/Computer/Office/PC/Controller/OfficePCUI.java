@@ -1,8 +1,9 @@
-package serverapplication.demo.Computer.Office.PC;
+package serverapplication.demo.Computer.Office.PC.Controller;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import serverapplication.demo.Computer.Office.PC.OfficePC;
 
 @SpringBootApplication
 @RequestMapping

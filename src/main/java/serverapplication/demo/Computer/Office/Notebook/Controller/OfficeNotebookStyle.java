@@ -1,4 +1,4 @@
-package serverapplication.demo.Computer.Office.Notebook;
+package serverapplication.demo.Computer.Office.Notebook.Controller;
 
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;

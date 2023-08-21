@@ -1,4 +1,4 @@
-package serverapplication.demo.Computer.Gaming.PC;
+package serverapplication.demo.Computer.Gaming.PC.Controller;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.ui.Model;
