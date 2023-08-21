@@ -1,0 +1,30 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black;
+    color: antiquewhite;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: rgb(53, 173, 255);
+}
+
+.submitNB{
+    background-color: antiquewhite;
+    width: 30%;
+}
