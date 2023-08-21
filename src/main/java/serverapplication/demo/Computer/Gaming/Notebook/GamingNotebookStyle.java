@@ -1,0 +1,20 @@
+package serverapplication.demo.Computer.Gaming.Notebook;
+
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+import java.io.IOException;
+import java.io.InputStream;
+
+@RestController
+public class GamingNotebookStyle {
+
+    @GetMapping(value = "/css/gamingNB.css", produces = "text/css")
+    public byte[] getStylesheet() throws IOException {
+        Resource resource = new ClassPathResource("static/css/gamingNB.css");
+        try (InputStream inputStream = resource.getInputStream()) {
+            return inputStream.readAllBytes();
+        }
+    }
+}
