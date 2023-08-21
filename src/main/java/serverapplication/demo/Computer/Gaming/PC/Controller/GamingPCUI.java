@@ -12,6 +12,7 @@ import serverapplication.demo.Stock.Stock;
 public class GamingPCUI {
     @GetMapping
     public String showUI(Model model){
+
         return "gamingPC";
     }
 
