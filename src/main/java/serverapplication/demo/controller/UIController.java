@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import serverapplication.demo.computer.gaming.notebook.ShowGamingNotebookStock;
 import serverapplication.demo.computer.gaming.pc.ShowGamingPCStock;
+import serverapplication.demo.computer.office.notebook.ShowOfficeNotebookStock;
+import serverapplication.demo.computer.office.pc.ShowOfficePCStock;
 
 @SpringBootApplication
 @Controller
@@ -24,6 +26,12 @@ public class UIController {
 
     @Autowired
     private ShowGamingPCStock showGamingPCStock;
+
+    @Autowired
+    private ShowOfficeNotebookStock showOfficeNotebookStock;
+
+    @Autowired
+    private ShowOfficePCStock showOfficePCStock;
 
     @GetMapping("/gamingNotebookInformations")
     public String getGamingNotebooks(Model model){
@@ -42,6 +50,20 @@ public class UIController {
         model.addAttribute("rams", showGamingPCStock.getAllRamFromGamingPCs());
         model.addAttribute("coolings", showGamingPCStock.getAllCoolingsFromGamingPCs());
         return "gamingPC";
+    }
+
+    @GetMapping("/officeNotebookInformations")
+    public String getOfficeNotebooks(Model model){
+        model.addAttribute("monitorsizes", showOfficeNotebookStock.getAllMonitorsizesFromOfficeNotebooks());
+        model.addAttribute("layouts", showOfficeNotebookStock.getAllLayoutsFromOfficeNotebooks());
+        return "officeNB";
+    }
+
+    @GetMapping("/officePCInformations")
+    public String getIOfficePC(Model model){
+        model.addAttribute("cpus", showOfficePCStock.getAllCpusFromOfficePCs());
+        model.addAttribute("rams", showOfficePCStock.getAllRamFromOfficePCs());
+        return "officePC";
     }
 
     @GetMapping("/officePCForm")
@@ -70,7 +92,7 @@ public class UIController {
         if ("officePC".equals(action)){
             valueOfReturn = "officePC";
         } else if ("officeNB".equals(action)){
-            valueOfReturn = "officeNB";
+            valueOfReturn = "redirect:/officeNotebookInformations";
         } else if ("gamingPC".equals(action)){
             valueOfReturn = "redirect:/gamingPCInformations";
         } else if ("gamingNB".equals(action)){
