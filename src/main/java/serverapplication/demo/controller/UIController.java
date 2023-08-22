@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import serverapplication.demo.computer.gaming.notebook.ShowGamingNotebookStock;
+import serverapplication.demo.computer.gaming.pc.ShowGamingPCStock;
 
 @SpringBootApplication
 @Controller
@@ -21,14 +22,26 @@ public class UIController {
     @Autowired
     private ShowGamingNotebookStock showNotebookStock;
 
-    @GetMapping("/gamingNB")
-    public String getNotebooks(Model model){
+    @Autowired
+    private ShowGamingPCStock showGamingPCStock;
+
+    @GetMapping("/gamingNotebookInformations")
+    public String getGamingNotebooks(Model model){
         model.addAttribute("monitorsizes", showNotebookStock.getAllMonitorsizesFromNotebooks());
         model.addAttribute("cpus", showNotebookStock.getAllCpusFromNotebooks());
         model.addAttribute("gpus", showNotebookStock.getAllGpusFromNotebooks());
         model.addAttribute("rams", showNotebookStock.getAllRamFromNotebooks());
         model.addAttribute("layouts", showNotebookStock.getAllLayoutsFromNotebooks());
         return "gamingNB";
+    }
+
+    @GetMapping("/gamingPCInformations")
+    public String getGamingPCs(Model model){
+        model.addAttribute("cpus", showGamingPCStock.getAllCpusFromGamingPCs());
+        model.addAttribute("gpus", showGamingPCStock.getAllGpusFromGamingPCs());
+        model.addAttribute("rams", showGamingPCStock.getAllRamFromGamingPCs());
+        model.addAttribute("coolings", showGamingPCStock.getAllCoolingsFromGamingPCs());
+        return "gamingPC";
     }
 
     @GetMapping("/officePCForm")
@@ -59,9 +72,9 @@ public class UIController {
         } else if ("officeNB".equals(action)){
             valueOfReturn = "officeNB";
         } else if ("gamingPC".equals(action)){
-            valueOfReturn = "gamingPC";
+            valueOfReturn = "redirect:/gamingPCInformations";
         } else if ("gamingNB".equals(action)){
-            valueOfReturn = "gamingNB";
+            valueOfReturn = "redirect:/gamingNotebookInformations";
         }
         return valueOfReturn;
     }

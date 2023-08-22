@@ -13,6 +13,5 @@ public class GamingPCController {
                                @RequestParam String ram,
                                @RequestParam String cooling,
                                Model model ){
-        CreateStock createStock = new CreateStock(1, cpu, gpu, ram, cooling, null);
     }
 }

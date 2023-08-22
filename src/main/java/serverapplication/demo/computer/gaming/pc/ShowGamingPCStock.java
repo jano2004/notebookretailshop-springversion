@@ -1,23 +1,13 @@
-package serverapplication.demo.computer.gaming.notebook;
+package serverapplication.demo.computer.gaming.pc;
 
 import org.springframework.stereotype.Service;
-import serverapplication.demo.computer.gaming.notebook.GamingNotebook;
-import serverapplication.demo.stock.CreateStock;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class ShowGamingNotebookStock {
-    public List<String> getAllMonitorsizesFromNotebooks(){
-        List<String> monitorsizes = new ArrayList<>();
-        monitorsizes.add("13 inches");
-        monitorsizes.add("14 inches");
-        monitorsizes.add("15 inches");
-        return monitorsizes;
-    }
-    public List<String> getAllCpusFromNotebooks(){
-        CreateStock cs = new CreateStock();
+public class ShowGamingPCStock {
+    public List<String> getAllCpusFromGamingPCs(){
         List<String> cpus = new ArrayList<>();
         cpus.add("Intel Core i9-11900K");
         cpus.add("AMD Ryzen 9 5950X");
@@ -41,8 +31,7 @@ public class ShowGamingNotebookStock {
         cpus.add("AMD Ryzen 9 3900");
         return cpus;
     }
-    public List<String> getAllGpusFromNotebooks(){
-        CreateStock cs = new CreateStock();
+    public List<String> getAllGpusFromGamingPCs(){
         List<String> gpus = new ArrayList<>();
         gpus.add("NVIDIA GeForce RTX 3090");
         gpus.add("AMD Radeon RX 6900 XT");
@@ -66,8 +55,7 @@ public class ShowGamingNotebookStock {
         gpus.add("AMD Radeon RX 5200");
         return gpus;
     }
-    public List<String> getAllRamFromNotebooks(){
-        CreateStock cs = new CreateStock();
+    public List<String> getAllRamFromGamingPCs(){
         List<String> ram = new ArrayList<>();
         ram.add("8 GB");
         ram.add("16 GB");
@@ -77,15 +65,10 @@ public class ShowGamingNotebookStock {
         ram.add("256 GB");
         return ram;
     }
-    public List<String> getAllLayoutsFromNotebooks(){
-        CreateStock cs = new CreateStock();
-        List<String> layouts = new ArrayList<>();
-        layouts.add("de");
-        layouts.add("fr");
-        layouts.add("es");
-        layouts.add("it");
-        layouts.add("ja");
-        layouts.add("ko");
-        return layouts;
+    public List<String> getAllCoolingsFromGamingPCs(){
+        List<String> coolings = new ArrayList<>();
+        coolings.add("AIO (All in one)");
+        coolings.add("Block");
+        return coolings;
     }
 }

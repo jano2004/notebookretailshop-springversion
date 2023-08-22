@@ -17,6 +17,5 @@ public class GamingNotebookController {
                                      @RequestParam String layout,
                                      @RequestParam String action,
                                      Model model){
-        CreateStock createStock = new CreateStock(0, windowsizeInInch, cpu, gpu, ram, layout);
     }
 }

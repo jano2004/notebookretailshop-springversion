@@ -12,6 +12,5 @@ public class OfficePCController {
                                  @RequestParam String ram,
                                  @RequestParam String action,
                                  Model model){
-        CreateStock createStock = new CreateStock(3, cpu, ram, null, null, null);
     }
 }

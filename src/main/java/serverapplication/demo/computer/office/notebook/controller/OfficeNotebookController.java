@@ -16,6 +16,5 @@ public class OfficeNotebookController {
                                      @RequestParam String layout,
                                      @RequestParam String action,
                                      Model model){
-        CreateStock createStock = new CreateStock(2, windowsizeInInch, cpu, ram, layout, null);
     }
 }
