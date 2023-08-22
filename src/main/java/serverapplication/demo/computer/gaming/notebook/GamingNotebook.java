@@ -3,10 +3,8 @@ package serverapplication.demo.computer.gaming.notebook;
 import serverapplication.demo.computer.Computer;
 
 public class GamingNotebook extends Computer {
-    private int id = 0;
-    private String cpu;
-    private String gpu;
-    private String ram;
+    protected int id = 0;
+    protected String gpu;
     protected String windowsizeInInch;
     protected String layout;
 
@@ -20,6 +18,9 @@ public class GamingNotebook extends Computer {
     }
     public String getRam(){
         return ram;
+    }
+    public String getGpu(){
+        return gpu;
     }
     public String getWindowsizeInInch(){
         return windowsizeInInch;

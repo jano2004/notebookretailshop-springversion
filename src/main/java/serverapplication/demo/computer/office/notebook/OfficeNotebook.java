@@ -3,9 +3,7 @@ package serverapplication.demo.computer.office.notebook;
 import serverapplication.demo.computer.Computer;
 
 public class OfficeNotebook extends Computer {
-    private int id = 2;
-    private String cpu;
-    private String ram;
+    protected int id = 2;
     protected String windowsizeInInch;
     protected String layout;
 

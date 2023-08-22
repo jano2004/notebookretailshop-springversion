@@ -3,9 +3,7 @@ package serverapplication.demo.computer.office.pc;
 import serverapplication.demo.computer.Computer;
 
 public class OfficePC extends Computer {
-    private int id = 3;
-    private String cpu;
-    private String ram;
+    protected int id = 3;
     public OfficePC(String cpu, String ram){
         super(cpu, ram);
     }

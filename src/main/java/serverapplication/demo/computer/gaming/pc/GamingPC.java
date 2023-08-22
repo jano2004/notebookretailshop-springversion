@@ -3,11 +3,9 @@ package serverapplication.demo.computer.gaming.pc;
 import serverapplication.demo.computer.Computer;
 
 public class GamingPC extends Computer{
-    private int id = 1;
-    private String cpu;
-    private String gpu;
-    private String ram;
-    private String cooling;
+    protected int id = 1;
+    protected String gpu;
+    protected String cooling;
     public GamingPC(String cpu, String gpu, String ram, String cooling){
         super(cpu, ram);
         this.cooling = cooling;

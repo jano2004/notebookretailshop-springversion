@@ -1,13 +1,11 @@
 package serverapplication.demo.computer.gaming.pc.controller;
 
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import serverapplication.demo.stock.CreateStock;
 
-@SpringBootApplication
 @RequestMapping("/")
-public class GamingPCUI {
+public class GamingPCController {
 
     @GetMapping("/gamingPC")
     public void createGamingPC(@RequestParam String cpu,
