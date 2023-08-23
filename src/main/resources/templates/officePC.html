@@ -4,41 +4,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" th:href="@{/css/specifiedStyles/officePC.css}" />
-    <title>Gaming Notebooks</title>
+    <title>Office PC</title>
 </head>
 <body>
-<div class="main">
-    <div class="main_container">
-        <form action="/officePCForm" method="get">
-            <h2>Choose:</h2>
-            <p>
-            <h3>CPU:</h3>
-            <label>
-                <input type="radio" name="cpu" value="IntelCorei5-1135G7">
-            </label>Intel Core i5-1135G7h
-            <label>
-                <input type="radio" name="cpu" value="IntelCorei7-1165G7">
-            </label>Intel Core i7-1165G7
-            <label>
-                <input type="radio" name="cpu" value="IntelCorei9-11900H">
-            </label>Intel Core i9-11900H
-            <p>
-            <p>
-            <h3>RAM:</h3>
-            <label>
-                <input type="radio" name="ram" value="16GB">
-            </label>16 GB
-            <label>
-                <input type="radio" name="ram" value="32GB">
-            </label>32 GB
-            <label>
-                <input type="radio" name="ram" value="64GB">
-            </label>64 GB
-            <p>
-            <button type="submit" class="submitPC" id="submitPC" name="action" value="submit"><b>Submit</b></button>
-            <div th:if="${message}" th:text="${message}">worked</div>
-        </form>
-    </div>
-</div>
+<form action="/officePCInformations" method="get">
+    <h2>Choose:</h2>
+    <select name="cpus" id="cpus">
+        <option th:each="cpu : ${cpus}" th:value="${cpu}" th:text="${cpu}"></option>
+    </select>
+    <select name="rams" id="rams">
+        <option th:each="ram : ${rams}" th:value="${ram}" th:text="${ram}"></option>
+    </select>
+    <button type="submit" class="submitPC" id="submitPC" name="action" value="submit"><b>Submit</b></button>
+</form>
 </body>
 </html>

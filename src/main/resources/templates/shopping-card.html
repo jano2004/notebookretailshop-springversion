@@ -6,7 +6,10 @@
     <link rel="stylesheet" th:href="@{/css/specifiedStyles/shoppingcard.css}" />
     <title>Shopping-Card</title>
 </head>
-<body>
-
-</body>
+    <body>
+        <form action="/insertComputerIntoTextfield" method="get">
+            <h2>Card:</h2>
+            <input type="text" id="textfield" th:value="${valueFromBackend}" readonly>
+        </form>
+    </body>
 </html>

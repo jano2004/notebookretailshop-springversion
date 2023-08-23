@@ -7,9 +7,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import serverapplication.demo.computer.gaming.notebook.GamingNotebook;
 import serverapplication.demo.computer.gaming.notebook.ShowGamingNotebookStock;
+import serverapplication.demo.computer.gaming.pc.GamingPC;
 import serverapplication.demo.computer.gaming.pc.ShowGamingPCStock;
+import serverapplication.demo.computer.office.notebook.OfficeNotebook;
 import serverapplication.demo.computer.office.notebook.ShowOfficeNotebookStock;
+import serverapplication.demo.computer.office.pc.OfficePC;
 import serverapplication.demo.computer.office.pc.ShowOfficePCStock;
 
 @SpringBootApplication
@@ -90,7 +94,7 @@ public class UIController {
     public String clickOnNBorPC(@RequestParam String action, Model model){
         String valueOfReturn = "";
         if ("officePC".equals(action)){
-            valueOfReturn = "officePC";
+            valueOfReturn = "redirect:/officePCInformations";
         } else if ("officeNB".equals(action)){
             valueOfReturn = "redirect:/officeNotebookInformations";
         } else if ("gamingPC".equals(action)){
