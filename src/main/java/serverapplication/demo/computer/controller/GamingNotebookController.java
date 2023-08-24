@@ -21,6 +21,4 @@ public class GamingNotebookController {
     public String createGamingNotebook(Model model){
         return "gamingNB";
     }
-
-
 }

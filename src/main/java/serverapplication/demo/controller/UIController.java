@@ -11,6 +11,11 @@ import serverapplication.demo.computer.gaming.notebook.ShowGamingNotebookStock;
 import serverapplication.demo.computer.gaming.pc.ShowGamingPCStock;
 import serverapplication.demo.computer.office.notebook.ShowOfficeNotebookStock;
 import serverapplication.demo.computer.office.pc.ShowOfficePCStock;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @SpringBootApplication
 @Controller
@@ -21,28 +26,17 @@ public class UIController {
         return "homepage";
     }
 
-    @Autowired
-    GamingNotebookController gamingNotebookController;
-
-    @Autowired
-    private ShowGamingNotebookStock showNotebookStock;
-
-    @Autowired
-    private ShowGamingPCStock showGamingPCStock;
-
-    @Autowired
-    private ShowOfficeNotebookStock showOfficeNotebookStock;
-
-    @Autowired
-    private ShowOfficePCStock showOfficePCStock;
+    @GetMapping("/load-css.js")
+    public ResponseEntity<Resource> getLoadCssScript() {
+        Resource resource = new ClassPathResource("/static/load-css.js");
+        return ResponseEntity.ok()
+                .contentType(MediaType.parseMediaType("application/javascript"))
+                .body(resource);
+    }
 
     @GetMapping("/gamingNotebookInformations")
     public String getGamingNotebooks(Model model, @RequestParam String action) {
-        model.addAttribute("monitorsizes", showNotebookStock.getAllMonitorsizesFromNotebooks());
-        model.addAttribute("cpus", showNotebookStock.getAllCpusFromNotebooks());
-        model.addAttribute("gpus", showNotebookStock.getAllGpusFromNotebooks());
-        model.addAttribute("rams", showNotebookStock.getAllRamFromNotebooks());
-        model.addAttribute("layouts", showNotebookStock.getAllLayoutsFromNotebooks());
+
         if("submitShop".equals(action)){
             return "shopping-card";
         }
@@ -51,24 +45,19 @@ public class UIController {
 
     @GetMapping("/gamingPCInformations")
     public String getGamingPCs(Model model) {
-        model.addAttribute("cpus", showGamingPCStock.getAllCpusFromGamingPCs());
-        model.addAttribute("gpus", showGamingPCStock.getAllGpusFromGamingPCs());
-        model.addAttribute("rams", showGamingPCStock.getAllRamFromGamingPCs());
-        model.addAttribute("coolings", showGamingPCStock.getAllCoolingsFromGamingPCs());
+
         return "gamingPC";
     }
 
     @GetMapping("/officeNotebookInformations")
     public String getOfficeNotebooks(Model model) {
-        model.addAttribute("monitorsizes", showOfficeNotebookStock.getAllMonitorsizesFromOfficeNotebooks());
-        model.addAttribute("layouts", showOfficeNotebookStock.getAllLayoutsFromOfficeNotebooks());
+
         return "officeNB";
     }
 
     @GetMapping("/officePCInformations")
     public String getIOfficePC(Model model) {
-        model.addAttribute("cpus", showOfficePCStock.getAllCpusFromOfficePCs());
-        model.addAttribute("rams", showOfficePCStock.getAllRamFromOfficePCs());
+
         return "officePC";
     }
 

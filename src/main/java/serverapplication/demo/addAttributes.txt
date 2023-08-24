@@ -1,0 +1,20 @@
+gamingNotebookInformations:
+model.addAttribute("monitorsizes", showNotebookStock.getAllMonitorsizesFromNotebooks());
+model.addAttribute("cpus", showNotebookStock.getAllCpusFromNotebooks());
+model.addAttribute("gpus", showNotebookStock.getAllGpusFromNotebooks());
+model.addAttribute("rams", showNotebookStock.getAllRamFromNotebooks());
+model.addAttribute("layouts", showNotebookStock.getAllLayoutsFromNotebooks());
+
+gamingPCInformations:
+model.addAttribute("cpus", showGamingPCStock.getAllCpusFromGamingPCs());
+model.addAttribute("gpus", showGamingPCStock.getAllGpusFromGamingPCs());
+model.addAttribute("rams", showGamingPCStock.getAllRamFromGamingPCs());
+model.addAttribute("coolings", showGamingPCStock.getAllCoolingsFromGamingPCs());
+
+officeNotebookInformations:
+model.addAttribute("monitorsizes", showOfficeNotebookStock.getAllMonitorsizesFromOfficeNotebooks());
+model.addAttribute("layouts", showOfficeNotebookStock.getAllLayoutsFromOfficeNotebooks());
+
+officePCInformations:
+model.addAttribute("cpus", showOfficePCStock.getAllCpusFromOfficePCs());
+model.addAttribute("rams", showOfficePCStock.getAllRamFromOfficePCs());
