@@ -1,4 +1,4 @@
-package serverapplication.demo.computer.gaming.pc.controller;
+package serverapplication.demo.computer.controller;
 
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;

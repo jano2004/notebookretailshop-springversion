@@ -6,16 +6,16 @@
     <link rel="stylesheet" th:href="@{/css/specifiedStyles/officePC.css}" />
     <title>Office PC</title>
 </head>
-<body>
-<form action="/officePCInformations" method="get">
-    <h2>Choose:</h2>
-    <select name="cpus" id="cpus">
-        <option th:each="cpu : ${cpus}" th:value="${cpu}" th:text="${cpu}"></option>
-    </select>
-    <select name="rams" id="rams">
-        <option th:each="ram : ${rams}" th:value="${ram}" th:text="${ram}"></option>
-    </select>
-    <button type="submit" class="submitPC" id="submitPC" name="action" value="submit"><b>Submit</b></button>
-</form>
-</body>
+    <body>
+        <form action="/officePCInformations" method="get">
+            <h2>Choose:</h2>
+            <select name="cpus" id="cpus">
+                <option th:each="cpu : ${cpus}" th:value="${cpu}" th:text="${cpu}"></option>
+            </select>
+            <select name="rams" id="rams">
+                <option th:each="ram : ${rams}" th:value="${ram}" th:text="${ram}"></option>
+            </select>
+            <button type="submit" class="submit" id="submit" name="action" value="submitShop"><b>Submit</b></button>
+        </form>
+    </body>
 </html>
