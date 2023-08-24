@@ -1,31 +1,26 @@
 package serverapplication.demo.computer.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.*;
+import serverapplication.demo.computer.gaming.notebook.ShowGamingNotebookStock;
 
-@RequestMapping("/")
+@RestController
+@RequestMapping("/gamingNB")
 public class GamingNotebookController {
+
+    @Autowired
+    private ShowGamingNotebookStock showNotebookStock;
+
     @GetMapping
     public String showUI(Model model){
         return "gamingNB";
     }
 
-    @GetMapping("/gamingNB")
-    public String createGamingNotebook(@RequestParam String windowsizeInInch,
-                                     @RequestParam String cpu,
-                                     @RequestParam String gpu,
-                                     @RequestParam String ram,
-                                     @RequestParam String layout,
-                                     @RequestParam String action,
-                                     Model model){
-        return "redirect:/insertComputerIntoTextfield";
+    @PostMapping("/gamingNB")
+    public String createGamingNotebook(Model model){
+        return "gamingNB";
     }
 
-    @GetMapping("/insertComputerIntoTextfield")
-    public String showUIShoppingCard(Model model){
-        return "shopping-card";
-    }
+
 }

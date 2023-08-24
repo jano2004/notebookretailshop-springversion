@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import serverapplication.demo.computer.controller.GamingNotebookController;
 import serverapplication.demo.computer.gaming.notebook.ShowGamingNotebookStock;
 import serverapplication.demo.computer.gaming.pc.ShowGamingPCStock;
 import serverapplication.demo.computer.office.notebook.ShowOfficeNotebookStock;
@@ -21,6 +22,9 @@ public class UIController {
     }
 
     @Autowired
+    GamingNotebookController gamingNotebookController;
+
+    @Autowired
     private ShowGamingNotebookStock showNotebookStock;
 
     @Autowired
@@ -32,18 +36,16 @@ public class UIController {
     @Autowired
     private ShowOfficePCStock showOfficePCStock;
 
-    @GetMapping("/insertComputerIntoTextfield")
-    public String showUIShoppingCard(Model model){
-        return "shopping-card";
-    }
-
     @GetMapping("/gamingNotebookInformations")
-    public String getGamingNotebooks(Model model) {
+    public String getGamingNotebooks(Model model, @RequestParam String action) {
         model.addAttribute("monitorsizes", showNotebookStock.getAllMonitorsizesFromNotebooks());
         model.addAttribute("cpus", showNotebookStock.getAllCpusFromNotebooks());
         model.addAttribute("gpus", showNotebookStock.getAllGpusFromNotebooks());
         model.addAttribute("rams", showNotebookStock.getAllRamFromNotebooks());
         model.addAttribute("layouts", showNotebookStock.getAllLayoutsFromNotebooks());
+        if("submitShop".equals(action)){
+            return "shopping-card";
+        }
         return "gamingNB";
     }
 
@@ -80,7 +82,7 @@ public class UIController {
         } else if ("gamingPC".equals(action)) {
             valueOfReturn = "redirect:/gamingPCInformations";
         } else if ("gamingNB".equals(action)) {
-            valueOfReturn = "redirect:/gamingNotebookInformations";
+            valueOfReturn = "gamingNB";
         }
         return valueOfReturn;
     }

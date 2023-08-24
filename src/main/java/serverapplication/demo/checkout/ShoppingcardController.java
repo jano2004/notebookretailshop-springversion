@@ -4,7 +4,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import serverapplication.demo.computer.Computer;
 
-@RequestMapping("/")
+@RestController
+@RequestMapping("/shopping-card")
 public class ShoppingcardController {
     @GetMapping
     public String showUI(Model model){
@@ -14,6 +15,6 @@ public class ShoppingcardController {
     @GetMapping("/shopping-card")
     public String insertComputerIntoTextfield(Model model, Computer computer){
         model.addAttribute("valueFromBackend", computer);
-        return "redirect:/shopping-card";
+        return "shopping-card";
     }
 }
