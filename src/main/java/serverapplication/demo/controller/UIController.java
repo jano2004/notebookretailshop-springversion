@@ -7,19 +7,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.GetMapping;
-import serverapplication.demo.stock.AddComputerToStock;
 import serverapplication.demo.stock.RemoveComputerFromStock;
 
 @SpringBootApplication
 @Controller
 @RequestMapping("/")
 public class UIController {
-
-    @Autowired
-    AddComputerToStock addComputerToStock;
-
-    @Autowired
-    RemoveComputerFromStock removeComputerFromStock;
 
     @GetMapping
     public String showUI(Model model) {

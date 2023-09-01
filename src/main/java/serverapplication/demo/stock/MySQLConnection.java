@@ -1,9 +1,11 @@
 package serverapplication.demo.stock;
 
+import org.springframework.stereotype.Service;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+@Service
 public class MySQLConnection {
     private Connection con;
 
