@@ -28,6 +28,7 @@ public class GamingNotebookController {
 
     @GetMapping("/gamingNotebooks")
     public String insertIntoDropdownlist(Model model){
+        model.addAttribute("gamingNotebooks", getComputersFromStock.getGamingNotebooksFromStock());
         return "gamingNB";
     }
 }
