@@ -4,14 +4,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import serverapplication.demo.stock.CreateStock;
 
-@RequestMapping("/")
+@RequestMapping("/gamingPC")
 public class GamingPCController {
 
-    @GetMapping("/gamingPC")
-    public void createGamingPC(@RequestParam String cpu,
-                               @RequestParam String gpu,
-                               @RequestParam String ram,
-                               @RequestParam String cooling,
-                               Model model ){
+    @GetMapping
+    public String showUI(Model model){
+        return "gamingPC";
+    }
+
+    @PostMapping("/gamingPC")
+    public String createGamingNotebook(Model model){
+        return "gamingPC";
     }
 }
