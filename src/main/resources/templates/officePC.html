@@ -9,11 +9,8 @@
     <body>
         <form action="/officePCInformations" method="get">
             <h2>Choose:</h2>
-            <select name="cpus" id="cpus">
-                <option th:each="cpu : ${cpus}" th:value="${cpu}" th:text="${cpu}"></option>
-            </select>
-            <select name="rams" id="rams">
-                <option th:each="ram : ${rams}" th:value="${ram}" th:text="${ram}"></option>
+            <select name="officePCs" id="officePCs">
+                <option th:each="officePC : ${officePCs}" th:value="${officePCs}" th:text="${officePCs}"></option>
             </select>
             <button type="submit" class="submit" id="submit" name="action" value="submitShop"><b>Submit</b></button>
         </form>

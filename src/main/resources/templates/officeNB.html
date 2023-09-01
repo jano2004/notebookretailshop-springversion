@@ -9,11 +9,8 @@
     <body>
         <form action="/officeNotebookInformations" method="get">
             <h2>Choose:</h2>
-            <select name="monitorsizes" id="monitorsizes">
-                <option th:each="monitorsize : ${monitorsizes}" th:value="${monitorsize}" th:text="${monitorsize}"></option>
-            </select>
-            <select name="layouts" id="layouts">
-                <option th:each="layout : ${layouts}" th:value="${layout}" th:text="${layout}"></option>
+            <select name="officeNotebooks" id="officeNotebooks">
+                <option th:each="officeNotebook : ${officeNotebooks}" th:value="${officeNotebooks}" th:text="${officeNotebooks}"></option>
             </select>
             <button type="submit" class="submit" id="submit" name="action" value="submitShop"><b>Submit</b></button>
         </form>
