@@ -1,16 +1,10 @@
 package serverapplication.demo.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import serverapplication.demo.computer.controller.GamingNotebookController;
-import serverapplication.demo.computer.gaming.notebook.ShowGamingNotebookStock;
-import serverapplication.demo.computer.gaming.pc.ShowGamingPCStock;
-import serverapplication.demo.computer.office.notebook.ShowOfficeNotebookStock;
-import serverapplication.demo.computer.office.pc.ShowOfficePCStock;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.http.MediaType;
